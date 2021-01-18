@@ -165,6 +165,7 @@ func requestImage(imageURL string) (*http.Response, error) {
 	}
 
 	req.Header.Set("User-Agent", conf.UserAgent)
+	req.Header.Set("Referer", imageURL)
 
 	res, err := downloadClient.Do(req)
 	if err != nil {
